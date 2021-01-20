@@ -48,3 +48,10 @@ def test_is_not_prime(number):
 @pytest.mark.parametrize("number, expected_result", ((2, True), (3, True), (43, True), (1, False), (4, False), (100, False)))
 def test_is_prime(number, expected_result):
     assert is_prime(number) == expected_result
+
+
+# Using pytest.raises
+
+def test_is_prime_illegal_input():
+    with pytest.raises(TypeError):
+        is_prime('7')
